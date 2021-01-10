@@ -2,7 +2,6 @@ import java.io.IOException;
 import java.net.*;
 import java.net.http.*;
 
-//http://dataservice.accuweather.com/locations/v1/cities/ipaddress?apikey=XEieSk9NynHwWu3YC0W3qVAckyckKGFA&q=188.25.249.171
 
 public class Location {
     private String LocalizedName;
@@ -18,7 +17,6 @@ public class Location {
 
         try {
             setIP();
-            setKey();
 
             }
         catch (IOException e) {
@@ -45,7 +43,7 @@ public class Location {
         return this.IP;
     }
     private void setKey()  {
-       //
+
     }
     public String getkey()  {
         return this.Key;
@@ -54,4 +52,12 @@ public class Location {
 
 class Country {
     private String LocalizedName;
+
+    public String getLocalizedName() {
+        return LocalizedName;
+    }
+
+    public void setLocalizedName(String localizedName) {
+        LocalizedName = localizedName;
+    }
 }
