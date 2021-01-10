@@ -3,15 +3,17 @@ package me.acidburn.fakeAPIgetter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import org.apache.logging.log4j.*;
 
-public class TestingMain {
+public class Main {
+
+    static Logger logger = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) {
         System.out.println("Working");
         try {
             HTTPClientTest c = new HTTPClientTest();
             System.out.println("Status code: " + c.getStatusCode());
-          //  System.out.println(c.getResponse());
-
             String r = c.getResponse();
             String sep = " ";
 
@@ -22,11 +24,11 @@ public class TestingMain {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.debug(e.getMessage());
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            logger.debug(e.getMessage());
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.debug(e.getMessage());
         }
     }
 }
