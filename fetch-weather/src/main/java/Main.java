@@ -1,9 +1,14 @@
 import com.diogonunes.jcolor.*;
+import com.fasterxml.jackson.databind.JsonNode;
+
+import java.io.IOException;
 
 
 public class Main {
     public static void main(String[] args) {
-            APICalls apiCalls = new APICalls();
-            System.out.println(Ansi.colorize("TEST", Attribute.RED_TEXT()));
+
+            System.out.println(Ansi.colorize("WORKING...", Attribute.RED_TEXT()));
+            Location location = new Location().createLocation();
+            System.out.println(location.getKey());
     }
 }
